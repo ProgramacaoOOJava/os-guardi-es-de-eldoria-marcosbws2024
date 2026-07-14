@@ -8,12 +8,12 @@ public class Personagem {
     double poderBase;
 
     //contrutor da classe Personagem
-    public Personagem(String nome, String classe, int nivel, int pontosDeVida, double podeBase) {
+    public Personagem(String nome, String classe, int nivel, int pontosDeVida, double poderBase) {
         this.nome = nome;
         this.classe = classe;
         this.nivel = nivel;
         this.pontosDeVida = pontosDeVida;
-        this.poderBase = podeBase;
+        this.poderBase = poderBase;
     }
 
     /* Metodo para Exibir as informações */
