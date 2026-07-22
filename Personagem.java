@@ -1,15 +1,15 @@
-//Desafio Aventureiro
+//Desafio Mestre
 
 //Classe Abstrata Personagem, que será a superclasse para as classes Guerreiro e Mago
-public abstract class Personagem {
-//variáveis de instância
+public abstract class Personagem implements Comparable<Personagem> {
+    // variáveis de instância
     String nome;
     String classe;
     int nivel;
     int pontosDeVida;
     double poderBase;
 
-//CONSTRUTOR DA CLASSE PERSONAGEM
+    // CONSTRUTOR DA CLASSE PERSONAGEM
     public Personagem(String nome, String classe, int nivel, int pontosDeVida, double poderBase) {
         this.nome = nome;
         this.classe = classe;
@@ -18,7 +18,7 @@ public abstract class Personagem {
         this.poderBase = poderBase;
     }
 
-    //Metodo para Exibir as informações
+    // Metodo para Exibir as informações
     public void exibirStatus() {
         System.out.println("--- Status do Personagem ---");
         System.out.println("Nome: " + nome);
@@ -27,7 +27,18 @@ public abstract class Personagem {
         System.out.println("Pontos de Vida: " + pontosDeVida);
         System.out.println("Poder Base: " + poderBase);
     }
+
+    // método abstrato que será implementado nas subclasses
+    public abstract void usarHabilidadeEspecial();
     
-    //método abstrato que será implementado nas subclasses
-    public abstract void usarHabilidadeEspecial(); 
+
+    //Sobrescrevendo o metodo para criar a comparação por nível entre os Personagens
+    @Override
+    public int compareTo(Personagem outroPersonagem) {
+        return Integer.compare(this.nivel, outroPersonagem.nivel);
+      
+    }
+
+    public abstract double calcularPoderTotal();
+
 }
