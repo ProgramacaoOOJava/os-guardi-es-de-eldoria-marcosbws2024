@@ -15,6 +15,7 @@ public class Mago extends Personagem {
         this.inteligencia = inteligencia;
     }
 //Implementação do método abstrato da superclasse Personagem
+@Override
     public void usarHabilidadeEspecial() {
         System.out.println("O mago " + this.nome + " usa sua habilidade especial: Bola de Fogo!");
     }

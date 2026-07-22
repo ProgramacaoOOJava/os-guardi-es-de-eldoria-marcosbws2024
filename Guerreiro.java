@@ -14,6 +14,7 @@ public class Guerreiro extends Personagem {
         this.forca = forca;
     }
 //Implementação do método abstrato da superclasse Personagem
+@Override
     public void usarHabilidadeEspecial() {
         System.out.println("Guerreiro " + this.nome + " ataca com Espada Flamejante!");
     }
